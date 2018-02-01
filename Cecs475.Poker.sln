@@ -3,9 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{822028A6-2B26-47BB-9C1A-8746EF522287}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{283EDBAD-72C8-484B-BDB3-00A4940ED580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cecs475.Poker.Model", "src\Cecs475.Poker.Model\Cecs475.Poker.Model.csproj", "{E792111A-A7DF-4001-8F45-3E93DC8AD40F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cecs475.Poker.Test", "test\Cecs475.Poker.Test\Cecs475.Poker.Test.csproj", "{ADA604BB-CD70-4BCC-816E-98FE1AC8E932}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E792111A-A7DF-4001-8F45-3E93DC8AD40F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E792111A-A7DF-4001-8F45-3E93DC8AD40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E792111A-A7DF-4001-8F45-3E93DC8AD40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E792111A-A7DF-4001-8F45-3E93DC8AD40F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA604BB-CD70-4BCC-816E-98FE1AC8E932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA604BB-CD70-4BCC-816E-98FE1AC8E932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA604BB-CD70-4BCC-816E-98FE1AC8E932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA604BB-CD70-4BCC-816E-98FE1AC8E932}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E792111A-A7DF-4001-8F45-3E93DC8AD40F} = {822028A6-2B26-47BB-9C1A-8746EF522287}
+		{ADA604BB-CD70-4BCC-816E-98FE1AC8E932} = {283EDBAD-72C8-484B-BDB3-00A4940ED580}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A746B6C-4189-4F1E-B88B-4665F45A6337}
