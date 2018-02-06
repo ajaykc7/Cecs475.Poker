@@ -5,18 +5,18 @@ using System.Text;
 
 namespace Cecs475.Poker.Cards
 {
-    class PokerHand: IComparable<PokerHand>
+    public class PokerHand: IComparable<PokerHand>
     {
         public enum HandType
         {
             HighCard,
-            OnePair,
+            Pair,
             TwoPair,
-            ThreeOfAKind,
+            ThreeOfKind,
             Straight,
             Flush,
             FullHouse,
-            FourOfAKind,
+            FourOfKind,
             StraightFlush,
             RoyalFlush
         }
@@ -35,12 +35,12 @@ namespace Cecs475.Poker.Cards
         {
             get
             {
-                sortHand();
+                SortHand();
                 return mHand;
             }
         }
 
-        public HandType HType
+        public HandType PokerHandType
         {
             get
             {
@@ -48,18 +48,18 @@ namespace Cecs475.Poker.Cards
             }
         }
 
-        private void sortHand()
+        private void SortHand()
         {
-            quickSort(mHand, 0, mHand.Count);
+            QuickSort(mHand, 0, mHand.Count-1);
         }
 
-        private void quickSort(List<Card> h, int start, int end)
+        private void QuickSort(List<Card> h, int start, int end)
         {
             if (start < end)
             {
                 int partitionIndex = Partition(h, start, end);
-                quickSort(h, start, partitionIndex - 1);
-                quickSort(h, partitionIndex + 1, end);
+                QuickSort(h, start, partitionIndex - 1);
+                QuickSort(h, partitionIndex + 1, end);
             }
         }
 
@@ -86,7 +86,27 @@ namespace Cecs475.Poker.Cards
 
         public int CompareTo(PokerHand other)
         {
-            throw new NotImplementedException();
+            if (this.PokerHandType > other.PokerHandType)
+            {
+                return 1;
+            }else if(this.PokerHandType < other.PokerHandType)
+            {
+                return -1;
+            }
+            else
+            {
+                for (int i = this.Hand.Count-1; i >= 0; i--)
+                {
+                    if (this.Hand[i].CompareTo(other.Hand[i])>0)
+                    {
+                        return 1;
+                    }else if (this.Hand[i].CompareTo(other.Hand[i]) < 0)
+                    {
+                        return -1;
+                    }
+                }
+                return 0;
+            }
         }
     }
 }
